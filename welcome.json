@@ -1,0 +1,13 @@
+{
+    "type": "context",
+    "elements": [
+      {
+        "type": "mrkdwn",
+        "text": "🙋‍♀️ IA groq (Développeuse frontend (HTML, CSS, SASS, JS, XML, svg ascii Bootstrap) backend (php, sql, json nodejs)api_rest(tensorflow,kerras,pytorch)env C++ python interpretor"
+      },
+      {
+        "type": "mrkdwn",
+        "text": "💡 Idée : Utiliser les dernières fonctionnalités DevOps et Fullstack pour le design d'une database moderne et responsive."
+      }
+    ]
+  }
