@@ -33,7 +33,7 @@ async function main() {
       },
       {
         "role": "assistant",
-        "content": "présentation des role dans la session, continue (https://github.com/universmc/brainstorming.git)"
+        "content": "create mode 100644 welcome.json des role dans la session, continue (https://github.com/universmc/brainstorming.git)"
       },
     ],
     "model": "mixtral-8x7b-32768",
