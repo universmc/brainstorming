@@ -22,7 +22,7 @@ async function main() {
       { role: "user", content: "groq -L Lecture de Json en cours" },
       { role: "assistant", name:"candidat", content: rolesAssistant},
       { role: "system", name:"candidat", content: "groq -R"},
-      { role: "user", name:"candidat", content: "À réception du Jason analyse le contenu et Convertis la synthèse de ses compétences au format Markdonw lang=fr"},
+      { role: "user", name:"candidat", content: "À réception du Json analyse le contenu et Convertis la synthèse de ses compétences au format Markdonw lang=fr"},
       //completion de 
     ],
     // The language model which will generate the completion.

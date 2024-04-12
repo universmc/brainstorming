@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainstorming</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xMmcke49" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8P5yLHG/TMwDX6Yl/E6joc"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"
+        integrity="sha384-MrFsm+sodUMSWw+KcQgfbdymkU/+IrjNzI5L06febp/Zdnobx93bgs/pMD14Ehdb"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="text-center py-4">💡 Brainstorming</h1>
+                    <div class="card">
+                        <div class="card-header bg-info text-white">
+                            <i class="fas fa-tasks"></i> Liste des tâches
+                        </div>
+                        <div class="card-body">
+                            <ul id="list-tasks" class="list-group"></ul>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <div class="card-header bg-info text-white">
+                            <i class="fas fa-plus-square"></i> Ajouter une nouvelle tâche
+                        </div>
+                        <div class="card-body">
+                            <form id="form-task">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="task-name" placeholder="Nom de la tâche"
+                                        required>
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-outline-info"><i
+                                                class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        const listTasks = document.getElementById('list-tasks');
+        const formTask = document.getElementById('form-task');
+        const taskName = document.getElementById('task-name');
+
+        formTask.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (taskName.value) {
+                fetch('https://github.com/universmc/brainstorming/tasks', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ name: taskName.value })
+                    })
+                    .then(res => res.json())
+                    .then(task => {
+                        listTasks.appendChild(createTaskElement(task));
+                        taskName.value = '';
+                    })
+                    .catch(err => alert(err))
+            }
+        });
+
+        function createTaskElement(task) {
+            const li = document.createElement('li');
+            li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+            li.dataset.id = task.id;
+            
+            const span = document.createElement('span');
+            span.textContent = task.name;
+
+            const buttons = document.createElement('div');
+            buttons.classList.add('btn-group');
+
+            const editBtn = document.createElement('button');
+            editBtn.classList.add('btn', 'btn-outline-success', 'btn-sm');
+            editBtn.dataset.action = 'edit';
+            editBtn.textContent = 'Modifier';
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.classList.add('btn', 'btn-outline-danger', 'btn-sm');
+            deleteBtn.dataset.action = 'delete';
+            deleteBtn.textContent = 'Supprimer';
+
+            buttons.appendChild(editBtn);
+            buttons.appendChild(deleteBtn);
+            li.appendChild(span);
+            li.appendChild(buttons);
+
+            editBtn.addEventListener('click', () => {
+                editTask(li.dataset.id, task.name);
+            });
+
+            deleteBtn.addEventListener('click', () => {
+                deleteTask(li.dataset.id);
+            });
+
+            return li;
+        }
+
+        function editTask(id, name) {
+            const newName = prompt('Entrez le nouveau nom de la tâche :');
+            if (newName) {
+                fetch(`https://github.com/universmc/brainstorming/tasks/${id}`, {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ name: newName })
+                    })
+                    .then(res => res.json())
+                    .then(task => {
+                        const li = listTasks.querySelector(`[data-id="${task.id}"]`);
+                        li.firstChild.textContent = task.name;
+                    })
+                    .catch(err => alert(err));
+            }
+        }
+
+        function deleteTask(id) {
+            const isSure = confirm('Voulez-vous vraiment supprimer cette tâche ?');
+            if (isSure) {
+                fetch(`https://github.com/universmc/brainstorming/tasks/${id}`, { method: 'DELETE' })
+                    .then(() => {
+                        const li = listTasks.querySelector(`[data-id="${id}"]`);
+                        listTasks.removeChild(li);
+                    })
+                    .catch(err => alert(err));
+            }
+        }
+
+        fetch('https://github.com/universmc/brainstorming/tasks')
+            .then(res => res.json())
+            .then(tasks => {
+                tasks.forEach(task => {
+                    listTasks.appendChild(createTaskElement(task));
+                });
+            })
+            .catch(err => alert(err));
+    </script>
+</body>
+
+</html>

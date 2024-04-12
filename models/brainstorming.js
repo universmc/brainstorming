@@ -5,6 +5,8 @@ const groq = new Groq();
 async function main() {
   console.log("Démarrage de la session de brainstorming sur github");
 
+  const Github = url`https://github.com/universmc/brainstorming.git`
+
   const chatCompletion = await groq.chat.completions.create({
     "messages": [
       {
