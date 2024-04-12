@@ -1,0 +1,40 @@
+/*
+Theme Name: XorldTheme
+Theme URI: http://wp.univers-mc.cloud/theme-world
+Author: Maestro Mickael
+Author URI: http://wp.univers-mc.cloud
+Description: Un thème personnalisé pour wp.univers-mc.cloud.
+Version: 1.0
+*/
+
+html, body {
+    min-width: 100vh;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+*{box-sizing: border-box;}
+
+header {
+    min-width: 99%;
+    min-height: 15%;
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 20px;
+}
+.menu li {
+    display:flex;
+}
+
+main {
+    min-width: 99%;
+    min-height: 70%;
+}
+
+footer {
+    min-width: 99%;
+    min-height: 15%;
+}

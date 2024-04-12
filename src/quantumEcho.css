@@ -1,0 +1,16 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+h1, h2 {
+    color: #007bff;
+}
+
+#about, #features {
+    padding: 2rem 0;
+}
+
+#contact form {
+    max-width: 500px;
+    margin: auto;
+}

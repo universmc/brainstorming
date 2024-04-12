@@ -1,0 +1,50 @@
+[       
+    {
+    "titre": "Fullstack Development",
+    "sousSections": [
+        {
+            "sousTitre": "Introduction",
+            "contenu": "Présentation de l'agent IA le développement du projet umcTokens."
+        },
+        {
+            "sousTitre": "FullStack",
+            "contenuMarkdown": "src/md/devStep.md"
+        },
+        {
+            "sousTitre": "devops",
+            "contenuMarkdown": "src/md/devops2.md"
+        }
+    ]
+    },
+   
+    {
+        "titre": "Ressources",
+        "sousSections": [
+            {
+                "sousTitre": "Récapitulatif des Technologies et Concepts Clés",
+                "contenu": "..."
+            },
+            {
+                "sousTitre": "Ressources pour Approfondissement",
+                "contenu": "Livres, tutoriels en ligne, communautés de développement."
+            }
+        ]
+    },
+    {
+        "titre": "Conseils",
+        "sousSections": [
+            {
+                "sousTitre": "Interactivité avec l'IA",
+                "contenu": "Intégrer des démonstrations interactives où NeoFS génère des exemples de code en temps réel."
+            },
+            {
+                "sousTitre": "Projets Pratiques",
+                "contenu": "Encourager les étudiants à travailler sur des projets qui couvrent à la fois le front-end et le back-end, en utilisant les technologies apprises."
+            },
+            {
+                "sousTitre": "Feedback Continu",
+                "contenu": "Utiliser les retours des étudiants pour améliorer et adapter le contenu du cours."
+            }
+        ]
+    }
+]

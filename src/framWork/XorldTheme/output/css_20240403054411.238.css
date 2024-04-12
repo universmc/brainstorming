@@ -1,0 +1,133 @@
+Bien sûr, voici un autre exemple de code style.css pour une page web responsive avec une mise en page en trois colonnes:
+```css
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Grid */
+.row {
+  margin: 0 -10px;
+}
+
+.col {
+  display: block;
+  float: left;
+  padding: 0 10px;
+}
+
+.col-1 {
+  width: 8.333%;
+}
+
+.col-2 {
+  width: 16.666%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.333%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .col {
+    width: 100%;
+  }
+}
+
+/* Header Styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  float: left;
+  margin-right: 15px;
+}
+
+nav {
+  float: right;
+}
+
+nav a {
+  color: #fff;
+  padding: 0 10px;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* Section Styles */
+section {
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+}
+
+section h2 {
+  margin-bottom: 10px;
+}
+
+section a {
+  color: #009aed;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 24px;
+  }
+}
+```

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .emoji-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .emoji {
+            font-size: 3em;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .emoji:hover {
+            transform: scale(1.2);
+        }
+
+        .myModalJS {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bienvenue sur ma page web 🤩</h1>
+    <div class="emoji-container">
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🤖</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">👍</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🥊</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🇫🇷</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">✨💪</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">💰</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🔥</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🏛</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🌍</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">📊</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">💻</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🗣</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🤝</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">💥</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🤖</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🤖🤜🤛🤖</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🤓</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🤩</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🎈</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🎥</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">📺</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🥊</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🏫</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🗝️</div>
+        <div class="emoji" data-bs-toggle="modal" data-bs-target="#emojiModal" data-wiki="https://www.wikidata.org/wiki/User:Gpt.univers-mc" data-codex="https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb">🏴‍☠️</div>
+    </div>
+
+    <div class="myModalJS">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h5 id="emoji-name"></h5>
+            <p id="emoji-wiki"></p>
+            <h6>Codex:</h6>
+            <p id="emoji-codex"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLeSaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script>
+        document.querySelectorAll('.emoji').forEach(emoji => {
+            emoji.addEventListener('click', () => {
+                const name = emoji.textContent.trim();
+                const wiki = emoji.getAttribute('data-wiki');
+                const codex = emoji.getAttribute('data-codex');
+
+                document.getElementById('emoji-name').textContent = name;
+                document.getElementById('emoji-wiki').textContent = `Wiki: <a href="${wiki}" target="_blank">${wiki}</a>`;
+                document.getElementById('emoji-codex').textContent = `Codex: <a href="${codex}" target="_blank">${codex}</a>`;
+
+                document.querySelector('.myModalJS').style.display = 'block';
+            });
+        });
+
+        document.querySelector('.close').addEventListener('click', () => {
+            document.querySelector('.myModalJS').style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target == document.querySelector('.myModalJS')) {
+                document.querySelector('.myModalJS').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>[/][0]: https://archive.org
+[1]: https://github.com/universmc/DisKetCrypto'
+[2]: https://www.google.com
+[3]: deep_learning:https://www.w3big.com/
+[4]: <div class='myModalJS'></div>
+[5]: https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb
+[6]: http://Ia.univers-mc.cloud/DisKetCrypto/
+[7]: <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLeSaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous'></script>
+[8]: https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+[9]: https://colab.research.google.com/github/universmc/DisKetCrypto/blob/main/codex/emoji.ipynb
+[10]: https://www.wikidata.org/wiki/User:Gpt.univers-mc
+[11]: https://colab.research.google.com/github/universmc/DisKetCrypto/blob/
