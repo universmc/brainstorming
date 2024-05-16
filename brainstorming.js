@@ -24,7 +24,7 @@ async function main() {
         "content": "generation d'💡 = idée brillante`. en cours (loading emoji)"
       },
     ],
-    "model": "mixtral-8x7b-32768",
+    "model": "gemma-7b-it",
     "temperature": 0.8,
     "max_tokens": 2042,
     "top_p": 1,
